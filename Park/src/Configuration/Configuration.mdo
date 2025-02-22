@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="26a3f59f-7434-43f8-8073-ac01def28e53">
+  <name>Park</name>
+  <synonym>
+    <key>en</key>
+    <value>Park</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="72a5c79f-0525-4a6a-acdc-41926229a165"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="4701ad71-e5da-4de6-8e4f-26bd49060639"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="eaebdee7-4f52-450e-b1fa-b2f1d659e112"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="6e41ade2-669e-4da0-8ff3-c2935ae9fd56"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="f6777e63-2267-4461-bc2c-91551cad4957"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="67d7cbb2-1753-443b-804c-e966fb47cd6b"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="a0e285a5-1185-4102-8190-8240041704a4"/>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <vendor>userroma</vendor>
+  <version>1.0.0.1</version>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <copyright>
+    <key>en</key>
+    <value>userroma</value>
+  </copyright>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.25</compatibilityMode>
+  <languages uuid="ed40f3d5-4cf5-4b05-8bc8-e9b39512e0c5">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <roles>Role.Cashier</roles>
+  <roles>Role.Full</roles>
+  <roles>Role.Operator</roles>
+  <catalogs>Catalog.Аттракционы</catalogs>
+  <documents>Document.ПосещениеАттакциона</documents>
+  <documents>Document.ПродажаБилета</documents>
+  <reports>Report.Sales</reports>
+  <reports>Report.Statistics</reports>
+  <accumulationRegisters>AccumulationRegister.Sales</accumulationRegisters>
+  <accumulationRegisters>AccumulationRegister.АктивныеПосещения</accumulationRegisters>
+</mdclass:Configuration>

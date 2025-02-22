@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68923505-a6bf-4d70-96e1-2bfeee623196">
+  <producedTypes>
+    <selectionType typeId="5a50613d-6335-46ee-880a-2594c3aecec4" valueTypeId="7c7fedc4-ce0b-4f30-8b87-75feeb0553b6"/>
+    <listType typeId="a6ae1374-2a48-461d-9be9-5144aa7bce2b" valueTypeId="7217a3dd-9072-4ae6-8b40-4260f6252e74"/>
+    <managerType typeId="75f784b7-1a35-45ec-a7ca-c7d8d622f3d1" valueTypeId="02e8759f-c4ae-4a25-a361-3e8e58df0950"/>
+    <recordSetType typeId="8c9ab302-8217-4125-991d-c8158d94d9ea" valueTypeId="9ede31cf-4144-4e7a-b48b-3d213777380f"/>
+    <recordKeyType typeId="84649318-be04-4998-972c-794d7a3eb656" valueTypeId="c10c844b-9890-44ff-8c69-dee113e5a29e"/>
+    <recordType typeId="88401adc-5126-498e-bd7b-354dd1225fd3" valueTypeId="835f2b07-3d65-4082-929a-09b51f6cecba"/>
+  </producedTypes>
+  <name>Sales</name>
+  <synonym>
+    <key>en</key>
+    <value>Sales</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="87069509-4849-4240-af34-dd5df72ee6c7">
+    <name>Sum</name>
+    <synonym>
+      <key>en</key>
+      <value>Sum</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="652ff005-5e56-44bc-8748-92f179a6d419">
+    <name>Аттракцион</name>
+    <synonym>
+      <key>en</key>
+      <value>Аттракцион</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Аттракционы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

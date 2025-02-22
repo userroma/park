@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="81c9908f-40e1-496d-8b51-b33ce5dcc9e6">
+  <producedTypes>
+    <objectType typeId="c29fccd8-8733-4974-8357-fa8da1f34c59" valueTypeId="923b36e3-7f35-493d-9063-7a1eb51dd2c4"/>
+    <managerType typeId="88c21bfe-60cc-4841-b916-662eefff1c19" valueTypeId="d3f36237-4c59-42b0-b94e-b940ff15223f"/>
+  </producedTypes>
+  <name>Sales</name>
+  <synonym>
+    <key>en</key>
+    <value>Sales</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.Sales.Template.MainDataCompositionSchema</mainDataCompositionSchema>
+  <templates uuid="f2882d57-b5aa-44b9-b924-4b5fcd453ab2">
+    <name>MainDataCompositionSchema</name>
+    <synonym>
+      <key>en</key>
+      <value>Main data composition schema</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>
