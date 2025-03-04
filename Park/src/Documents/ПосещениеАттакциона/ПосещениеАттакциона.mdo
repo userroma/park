@@ -27,10 +27,10 @@
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
   <attributes uuid="7946910c-1069-43ac-945b-7a0b7f23ccc1">
-    <name>Аттакцион</name>
+    <name>Аттракцион</name>
     <synonym>
       <key>en</key>
-      <value>Аттакцион</value>
+      <value>Аттракцион</value>
     </synonym>
     <type>
       <types>CatalogRef.Аттракционы</types>

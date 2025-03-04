@@ -8,7 +8,7 @@
 		<name>DataSet1</name>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Аттракцион</dataPath>
-			<field>Аттракцион</field>
+			<field>ВидАттракциона</field>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
@@ -19,7 +19,7 @@
 		</field>
 		<dataSource>DataSource1</dataSource>
 		<query>SELECT
-	SalesTurnovers.Аттракцион,
+	SalesTurnovers.ВидАттракциона,
 	SalesTurnovers.SumTurnover
 FROM
 	AccumulationRegister.Sales.Turnovers AS SalesTurnovers</query>

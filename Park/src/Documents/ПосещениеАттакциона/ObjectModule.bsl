@@ -5,36 +5,42 @@
 		//{{__REGISTER_RECORD_WIZARD
 		//This fragment was built by the wizard.
 		//Warning! All manually made changes will be lost next time you use the wizard.
-	
-		// register АктивныеПосещения
+		
 		RegisterRecords.АктивныеПосещения.Write = True;
-		Record = RegisterRecords.АктивныеПосещения.Add();
-		Record.Period = Date;
-		Record.RecordType = AccumulationRecordType.Expense;
-		Record.Основание = Основание;
-		Record.Аттракцион = Аттакцион;
-		Record.КоличествоПосещений = 1;
-		
 		RegisterRecords.Write();
-			
-		//{{QUERY_BUILDER_WITH_RESULT_PROCESSING
-		// This fragment was built by the wizard.
-		// Warning! All manually made changes will be lost next time you use the wizard.
-		
+		Отказ = false;
 		Query = New Query;
 		Query.Text =
 			"SELECT
-			|	АктивныеПосещенияBalance.Основание
+			|	АктивныеПосещенияBalance.КоличествоПосещенийBalance КАК КоличествоПосещений,
+			|	АктивныеПосещенияBalance.ВидАттракциона
 			|FROM
-			|	AccumulationRegister.АктивныеПосещения.Balance(, Основание = &Основание) AS АктивныеПосещенияBalance
-			|WHERE
-			|	АктивныеПосещенияBalance.КоличествоПосещенийBalance < 0";
+			|	AccumulationRegister.АктивныеПосещения.Balance(, Основание = &Основание) AS АктивныеПосещенияBalance";
 		
-		Query.SetParameter("Основание", Основание);
+
+		Query.SetParameter( "Основание", Основание );
+		QueryResult = Query.Execute().Select();		
 		
-		QueryResult = Query.Execute();
+		КоличествоПосещений = 0;
+		ВидАттракционаАбонемента = Неопределено;
 		
-		If Not QueryResult.IsEmpty() Then
+		If QueryResult.Next() Then
+			ОсталосьПосещений = QueryResult.КоличествоПосещений;
+			ВидАттракционаАбонемента = QueryResult.ВидАттракциона;
+		EndIf;
+		
+		If ОсталосьПосещений < 1 Then
+			Отказ = true;
+			Message = New UserMessage();
+			Message.Text = "No places in the ticket";
+			Message.SetData(ThisObject);
+			Message.Field = "Основание";
+			Message.Message();
+		EndIf;
+		
+		ВидАттракционаДокумента = ВидАттракциона( Аттракцион );
+		
+		If ЗначениеЗаполнено( ВидАттракционаАбонемента ) И ВидАттракционаАбонемента <> ВидАттракционаДокумента Then
 			Отказ = true;
 			Message = New UserMessage();
 			Message.Text = "incorrect ticket";
@@ -43,18 +49,49 @@
 			Message.Message();
 		EndIf;
 		
-		SelectionDetailRecords = QueryResult.Select();
+		Если Отказ Тогда
+			Возврат;
+		КонецЕсли;
 		
-		While SelectionDetailRecords.Next() Do
-			// Insert selection processing SelectionDetailRecords
-		EndDo;
+		// register АктивныеПосещения
+		RegisterRecords.АктивныеПосещения.Write = True;
+		Record = RegisterRecords.АктивныеПосещения.Add();
+		Record.Period = Date;
+		Record.RecordType = AccumulationRecordType.Expense;
+		Record.Основание = Основание;
+		Record.ВидАттракциона = ВидАттракционаАбонемента;
+		Record.КоличествоПосещений = 1;
+
+			
 		
-		//}}QUERY_BUILDER_WITH_RESULT_PROCESSING
-		
-		
-	
-		//}}__REGISTER_RECORD_WIZARD
+
 	EndProcedure
+
+	Function ВидАттракциона( Аттракцион )
+		
+		//{{QUERY_BUILDER_WITH_RESULT_PROCESSING
+		// This fragment was built by the wizard.
+		// Warning! All manually made changes will be lost next time you use the wizard.
+		
+		Query = New Query;
+		Query.Text =
+			"SELECT
+			|	Аттракционы.ВидАттракциона
+			|FROM
+			|	Catalog.Аттракционы AS Аттракционы
+			|WHERE
+			|	Аттракционы.Ref = &Ref";
+		
+		Query.SetParameter( "Ref", Аттракцион );
+		QueryResult = Query.Execute();
+		
+		SelectionDetailRecords = QueryResult.Select();
+		SelectionDetailRecords.Next();
+
+		Return SelectionDetailRecords.ВидАттракциона;
+		
+	EndFunction
+
 
 #КонецОбласти
 

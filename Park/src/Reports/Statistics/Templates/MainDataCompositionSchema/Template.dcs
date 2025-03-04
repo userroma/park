@@ -7,8 +7,8 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>DataSet1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Аттракцион</dataPath>
-			<field>Аттракцион</field>
+			<dataPath>ВидАттракциона</dataPath>
+			<field>ВидАттракциона</field>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
@@ -53,7 +53,7 @@
 		</field>
 		<dataSource>DataSource1</dataSource>
 		<query>SELECT
-	АктивныеПосещенияBalanceAndTurnovers.Аттракцион,
+	АктивныеПосещенияBalanceAndTurnovers.ВидАттракциона,
 	АктивныеПосещенияBalanceAndTurnovers.КоличествоПосещенийOpeningBalance,
 	АктивныеПосещенияBalanceAndTurnovers.КоличествоПосещенийReceipt,
 	АктивныеПосещенияBalanceAndTurnovers.КоличествоПосещенийExpense,
@@ -132,6 +132,9 @@ FROM
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидАттракциона</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>КоличествоПосещенийOpeningBalance</dcsset:field>
 					<dcsset:lwsTitle>
 						<v8:item>
@@ -198,7 +201,7 @@ FROM
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Аттракцион</dcsset:field>
+							<dcsset:field>ВидАттракциона</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						</dcsset:item>
